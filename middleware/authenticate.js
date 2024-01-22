@@ -10,7 +10,6 @@ const authenticate = (req, res, next) => {
   if (allowedOrigins.includes(req.headers.origin)) {
     const apiKey = req.headers["x-api-key"];
 
-    // Replace 'your_api_key' with the actual API key
     if (apiKey && apiKey === process.env.API_KEY) {
       next(); // Authentication successful
     } else {
